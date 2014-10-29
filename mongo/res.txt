@@ -1,0 +1,7 @@
+mongo --host 54.77.40.159 -u temp-user -ptemp-user@runningheroes.pwd
+
+load("exercise.js"); db.users.insert(user);
+
+db.users.update({email: 'jc.touzalin@runningheroes.com'}, {$push: {"apps.nike.activities": newNikeActivity}});
+
+db.users.update({"apps.nike.activities.id": 29724236}, {$set: {"apps.nike.activities.$.distance": 30000}});
