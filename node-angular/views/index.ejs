@@ -3,9 +3,10 @@
 
 	<body ng-controller="IndexCtrl">
 		<form method="POST" action="/">
-			<input type="email" placeholder="email" />
+			<input type="email" name="email" placeholder="email" />
 			<input type="submit" />
 		</form>
+		<span name="emailRes"><%= msg %></span>
 		<% include js %>
 	</body>
 </html>

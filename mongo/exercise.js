@@ -40,7 +40,7 @@ var user = {
             ],
             "id": "98259690"
         }
-    }
+    },
     "email": "jc.touzalin@runningheroes.com"
 };
 
@@ -53,3 +53,4 @@ var newNikeActivity = {
     "climb": 234.79146,
     "points": 244
 };
+

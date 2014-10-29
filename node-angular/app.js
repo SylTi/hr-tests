@@ -7,7 +7,8 @@
 
 var express = require('express'),
 	http = require('http'), 
-	path = require('path');
+	path = require('path'),
+	MailChecker = require('mailchecker');
 
 /*#############################################################
 						Configure app:
@@ -16,6 +17,7 @@ var express = require('express'),
 var app = express();
 
 app.configure(function(){
+	app.use(express.urlencoded());
 	app.use(express.compress());
 	app.use(express.static(path.join(__dirname, 'public')));
 	app.set('views', __dirname + '/views');
@@ -28,11 +30,21 @@ app.configure(function(){
 });
 
 app.get('/', function (req, res) {
-	res.render('index');
+	res.render('index', {msg: ""});
 });
 
 app.post('/', function (req, res) {
-	res.render('index');
+	var email = req.body.email;
+	console.log(req.body);
+	var msg = "email valide";
+	if(!MailChecker(email))
+	{
+		msg = 'Something wrong with the email';
+  		console.error(msg);
+	}
+	else
+		console.log(msg);
+	res.render('index', {msg: msg});
 });
 
 
