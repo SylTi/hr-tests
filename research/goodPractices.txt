@@ -29,7 +29,7 @@ use separate folder for client and server file, and for view/model/controller fi
 
 Each functionnality in a separate modules.
 
-Don't block the event loop with synchronous methods or CPU eavy computation (either process.nextTick(callback); or use npm threads-a-gogo)
+Don't block the event loop with synchronous methods or CPU heavy computation (either process.nextTick(callback); or use npm threads-a-gogo)
 
 Don't go too deep in nested callback (use npm async, Promise or Future)
 
