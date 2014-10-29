@@ -1,0 +1,39 @@
+In callbacks, err always come first, callback always come last.
+Always check for error
+
+
+function (err, data, cb) 
+{
+	if (err)
+		cb(err);
+	else
+	{
+		/* Do Something */
+		callback(null, data);
+	}
+}
+OR 
+function (err, data, cb) 
+{
+	if (err)
+		return cb(err);
+	/* Do Something */
+	callback(null, data);
+}
+
+don't throw exception in callbacks !
+Catch exception on synch code only.
+
+use MVC and a good folder structure :
+use separate folder for client and server file, and for view/model/controller files
+
+Each functionnality in a separate modules.
+
+Don't block the event loop with synchronous methods or CPU eavy computation (either process.nextTick(callback); or use npm threads-a-gogo)
+
+Don't go too deep in nested callback (use npm async, Promise or Future)
+
+Use npm before reinventing the wheel.
+
+Use automation tools like grunt.
+Use a package manager like bower.

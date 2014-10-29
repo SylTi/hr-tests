@@ -1,0 +1,13 @@
+{
+  "name": "grunt",
+  "version": "1.0.0",
+  "description": "Fix the \"push\" task to ensure that it doesn't fail if there is nothing to commit",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "load-grunt-config": "^0.14.0",
+    "time-grunt": "^1.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
